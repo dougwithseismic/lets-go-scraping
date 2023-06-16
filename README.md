@@ -1,6 +1,26 @@
 # Lets Go Scraping
 
-Meet `lets-go-scraping`, a simple puppeteer wrapper which makes the process of web scraping and automation with websites a breeze.
+Meet `lets-go-scraping`, a simple puppeteer wrapper which makes the process of web scraping and automation with websites a breeze. If you're spending too much time writing puppeteer boilerplate and not enough time automating tasks then `lets-go-scraping` will break that cycle.
+
+## What is `lets-go-scraping`?
+
+Born from the need to go fast on data collection projects, `lets-go-scraping` is a great way to utilize puppeteer without extensive setup and configuration. In it's simplest form, start scraping like this:
+
+```javascript
+runScraper({
+  initOptions: scraperOptions,
+  actions: [async (page) => {
+    await page.goto('https://example.com');
+    const title = await page.title();
+    return { url, title };
+  },async (page) => {
+    await page.goto('https://google.com');
+    const title = await page.title();
+    return { url, title };
+  }],
+}).then((result) => console.log(result.data));
+
+```
 
 ## Installation
 
@@ -32,7 +52,7 @@ import runScraper, { Action, InitOptions, OnComplete, OnError, OnSuccess, OnRequ
 ### Basic usage
 
 ```javascript
-// Define your actions
+// Define your actions - This is an array that would typically contain many urls, and a callback for each of them.
 const actions: Action[] = [
   async (page) => {
     await page.goto('https://example.com');
@@ -42,6 +62,8 @@ const actions: Action[] = [
 ];
 
 const scraperOptions: InitOptions = {
+    headless: 'new',
+    devtools: true
   // Any Puppeteer browser launch options
 };
 
@@ -78,6 +100,7 @@ runScraper({
 const onRequest: OnRequest = (request) => {
   console.log(`Starting request to ${request.url()}`);
   // Dont forget to abort or continue the request here!
+  // https://pptr.dev/guides/request-interception
   // request.abort() will stop the request from being made oooor..
  request.continue() // ... will continue the request
 
