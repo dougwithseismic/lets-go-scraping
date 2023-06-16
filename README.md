@@ -99,15 +99,30 @@ const scraperOptions: InitOptions = {
   // Any Puppeteer browser launch options
 };
 
-runScraper({
-  initOptions: scraperOptions,
-  actions,
-  onRequest,
-  onResponse,
-  onSuccess,
-  onError,
-  onComplete,
-}).then((result) => console.log(result));
+  runScraper({
+    initOptions: {
+      headless: false,
+      devtools: true,
+      proxy: 'http://myproxy:8080',
+      proxyCredentials: {
+        username: 'myUsername',
+        password: 'myPassword'
+      },
+      args: ['--no-sandbox', '--disable-setuid-sandbox']
+    },
+    actions,
+    onSuccess: (data) => console.log('Success: ', data),
+    onError: (errors) => console.error('Error: ', errors),
+    onComplete: (data, errors) => console.log('Complete: ', data, errors)
+  })
+    .then(({ data, isComplete, errors }) => {
+      console.log('Data: ', data)
+      console.log('Is Complete: ', isComplete)
+      console.log('Errors: ', errors)
+    })
+    .catch((error) => {
+      console.error('Unexpected Error: ', error)
+    })
 ```
 
 ### With Proxy Settings
