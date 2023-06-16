@@ -77,6 +77,10 @@ runScraper({
 
 const onRequest: OnRequest = (request) => {
   console.log(`Starting request to ${request.url()}`);
+  // Dont forget to abort or continue the request here!
+  // request.abort() will stop the request from being made oooor..
+ request.continue() // ... will continue the request
+
 };
 
 const onResponse: OnResponse = (response) => {
@@ -142,7 +146,6 @@ const scraperOptions: InitOptions = {
 
 // ...rest of the code
 ```
-
 
 ## License
 
