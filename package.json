@@ -1,7 +1,7 @@
 {
-  "name": "npm-puppet-master",
-  "version": "1.0.0",
-  "description": "Meet PuppetMaster, a simple puppeteer wrapper which makes the process of web scraping and automation with websites a breeze.",
+  "name": "@withseismic/lets-go-scraping",
+  "version": "1.0.1",
+  "description": "Meet Lets Go Scraping, a simple puppeteer wrapper which makes the process of web scraping and automation with websites a breeze.",
   "main": "index.js",
   "dependencies": {
     "abbrev": "^1.1.1",
