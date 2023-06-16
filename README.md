@@ -103,6 +103,9 @@ const scraperOptions: InitOptions = {
     initOptions: {
       headless: false,
       devtools: true,
+      delayBetweenActions: 2000, // 2 seconds between each action
+      timeout: 30000, // 30 seconds before page times out and moves on (default 60 seconds)
+      retries: 3,// Number of times an action will be tried if it fails. default 3.
       proxy: 'http://myproxy:8080',
       proxyCredentials: {
         username: 'myUsername',
