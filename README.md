@@ -148,4 +148,3 @@ const scraperOptions: InitOptions = {
 
 [ISC](LICENSE) © Doug Silkstone
 ```
-
