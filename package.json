@@ -1,6 +1,6 @@
 {
     "name": "lets-go-scraping",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "Meet Lets Go Scraping, a simple puppeteer wrapper which makes the process of web scraping and automation with websites a breeze.",
     "main": "dist/index.js",
     "devDependencies": {

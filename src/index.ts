@@ -92,4 +92,5 @@ const runScraper: RunScraper = async ({
   }
 }
 
+
 export default runScraper
