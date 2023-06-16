@@ -1,5 +1,5 @@
 {
-  "name": "@withseismic/lets-go-scraping",
+  "name": "lets-go-scraping",
   "version": "1.0.1",
   "description": "Meet Lets Go Scraping, a simple puppeteer wrapper which makes the process of web scraping and automation with websites a breeze.",
   "main": "index.js",
