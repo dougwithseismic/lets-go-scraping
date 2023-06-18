@@ -1,5 +1,7 @@
 # Lets Go Scraping
 
+[![npm version](https://badge.fury.io/js/lets-go-scraping.svg)](https://www.npmjs.com/package/lets-go-scraping)
+
 Meet `lets-go-scraping`, a simple puppeteer wrapper which makes the process of web scraping and automation with websites a breeze. If you're spending too much time writing puppeteer boilerplate and not enough time automating tasks then `lets-go-scraping` will break that cycle.
 
 ## What is `lets-go-scraping`?
