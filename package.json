@@ -1,6 +1,6 @@
 {
     "name": "lets-go-scraping",
-    "version": "1.0.65",
+    "version": "1.0.66",
     "description": "Meet Lets Go Scraping, a simple puppeteer wrapper which makes the process of web scraping and automation with websites a breeze.",
     "main": "dist/index.js",
     "devDependencies": {
@@ -18,7 +18,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/dougwithseismic/npm-puppet-master.git"
+        "url": "git+https://github.com/dougwithseismic/lets-go-scraping.git"
     },
     "keywords": [
         "puppeteer",
@@ -31,7 +31,7 @@
     "author": "",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/dougwithseismic/npm-puppet-master/issues"
+        "url": "https://github.com/dougwithseismic/lets-go-scraping/issues"
     },
-    "homepage": "https://github.com/dougwithseismic/npm-puppet-master#readme"
+    "homepage": "https://github.com/dougwithseismic/lets-go-scraping#readme"
 }
