@@ -73,6 +73,28 @@ runScraper({
 }).then((result) => console.log(result.data));
 ```
 
+### Using `puppeteer-extra`
+
+Sometimes, you'll find scraping cases where the regular puppeteer package just won't cut it, but `puppeteer-extra` will (Stealth plugin, anyone?) Here's how you can do that.
+
+```ts
+import puppeteerExtra from 'puppeteer-extra';
+import StealthPlugin from 'puppeteer-extra-plugin-stealth';
+import { runScraper } from 'scraper';
+
+// Add Stealth Plugin to puppeteerExtra
+puppeteerExtra.use(StealthPlugin());
+
+// Define the scraper options and actions
+const scraperOptions = {
+  puppeteerPackage: puppeteerExtra, // Use puppeteer-extra with Stealth Plugin
+  initOptions: {
+    headless: true,
+  },
+
+// ...
+```
+
 ### With all optional handlers
 
 ```javascript
@@ -173,4 +195,3 @@ const scraperOptions: InitOptions = {
 ## License
 
 [ISC](LICENSE) © Doug Silkstone
-```

@@ -16,6 +16,7 @@ export type { InitOptions, Action, OnComplete, OnSuccess, OnError, OnRequest, On
 
 // Main Scraper function
 const runScraper: RunScraper = async ({
+  puppeteerPackage = puppeteer,
   initOptions,
   actions,
   onComplete,
@@ -30,12 +31,14 @@ const runScraper: RunScraper = async ({
   let data: any[] = []
   let isComplete = false
   let errors: any[] = []
-  let browser = await puppeteer.launch(initOptions)
-  if (!browser) {
-    throw new Error('Unable to launch the browser')
-  }
+  let browser: Browser | null = null
 
   try {
+    browser = await puppeteerPackage.launch(initOptions)
+    if (!browser) {
+      throw new Error('Unable to launch the browser')
+    }
+
     // Set the timeout for scraper execution
     const timer = setTimeout(() => {
       throw new Error(`Scraping timed out after ${timeout} milliseconds`)
@@ -91,6 +94,5 @@ const runScraper: RunScraper = async ({
     actions: { eject: () => browser && browser.close() }
   }
 }
-
 
 export default runScraper
