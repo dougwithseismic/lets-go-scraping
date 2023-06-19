@@ -40,6 +40,7 @@ npm install lets-go-scraping
 - It can be configured with custom Puppeteer launch options.
 - Allows to set success, error, and completion handlers.
 - Supports the use of a proxy server.
+- Plug in `puppeteer-extra` easily.
 
 ## Usage
 
@@ -82,7 +83,7 @@ Sometimes, you'll find scraping cases where the regular puppeteer package just w
 ```ts
 import puppeteerExtra from 'puppeteer-extra';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
-import { runScraper } from 'scraper';
+import runScraper from 'lets-go-scraping';
 
 // Add Stealth Plugin to puppeteerExtra
 puppeteerExtra.use(StealthPlugin());
